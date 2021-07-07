@@ -1,4 +1,10 @@
-#https://stackoverflow.com/questions/52427281/add-and-delete-rows-of-dt-datatable-in-r-shiny
+
+#------------------------------------TITRE--------------------------------------
+#   Auteur: Yannick Chaval, INRAE (French National Research Institute for Agriculture, Food and Environment), CEFS (Wildlife, Behaviour and Ecology Research Unit)
+#   Date:   16/12/2020
+#   Description:
+# Documentation:
+##https://stackoverflow.com/questions/52427281/add-and-delete-rows-of-dt-datatable-in-r-shiny
 ### https://yihui.shinyapps.io/DT-edit/
 ##https://rstudio.github.io/DT/shiny.html
 ####listes inside data table
@@ -6,9 +12,30 @@
 ###html widget in datatable https://stackoverflow.com/questions/55034483/shiny-widgets-in-dt-table/55041373#55041373
 ######ref r studio
 ###https://shiny.rstudio.com/reference/shiny/0.11/dateInput.html
-
 #####callback DT editable
 ##https://stackoverflow.com/questions/57215607/render-dropdown-for-single-column-in-dt-shiny
+#
+#
+#
+#
+#------------------------------------------------------------------------------
+#-------------------------- environnement de travail --------------------------
+mypackages<-c("shiny", "shinyjs","plotly","reshape","dplyr","tidyverse","tidyr","markdown","leaflet","leaflet.minicharts","units","maptools","leafsync","sodium","rdrop2","lubridate", "magrittr", "sf","RPostgreSQL","data.table")
+for (p in mypackages){
+if(!require(p, character.only = TRUE)){
+install.packages(p)
+library(p, character.only = TRUE)
+}
+}
+#-----------------------------------------------------------------------------
+#-------------------------- connection aux bases de donnees ------------------
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R")
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R"))
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_serveur_dbcefs.R")
+# source("C:/Users/ychaval/Documents/BD_Gardouch/Programmes/R/con_serveur_dbgardouch.R")
+#-------------------------- chargement de mes fonctions ----------------------
+source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
+
 
 
 
