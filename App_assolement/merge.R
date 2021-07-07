@@ -1,7 +1,7 @@
 #------------------------------------merge df--------------------------------------
 #  Auteur: Yannick Chaval, INRAE (French National Research Institute for Agriculture, Food and Environment), CEFS (Wildlife, Behaviour and Ecology Research Unit)
 #  Date:  06/07/2021
-#  Description: scrip pour faire un merge des dbf du betail
+#  Description: scrip pour faire un merge des dbf du betail. Lorsque deux tablettes sont utilisées pour faire de l'assolement dans synchro, permet de faire de consensus des deux résultats et de générer l'applicatif de virification pour les divergences.
 #  Documentation:
 #
 #
