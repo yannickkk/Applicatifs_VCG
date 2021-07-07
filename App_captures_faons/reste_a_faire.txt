@@ -1,0 +1,5 @@
+à faire
+Lorsqu'on fait un trie et que l'on entre une valeur, le trie est perdu. Reprendre cela.
+
+pour les widgets ça marche pour les listes déroulantes (attention à ce que le case soit bien sélEctionnée)
+ça ne marche pas pour les dates (pas de callback)
