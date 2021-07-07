@@ -1,5 +1,5 @@
 
-#------------------------------------TITRE--------------------------------------
+#------------------------------------DATATABLE EDITABLE POUR SAISIE CAPTURES FAONS ET MODIF TABLE INDIVIDU db_cefs--------------------------------------
 #   Auteur: Yannick Chaval, INRAE (French National Research Institute for Agriculture, Food and Environment), CEFS (Wildlife, Behaviour and Ecology Research Unit)
 #   Date:   16/12/2020
 #   Description:
