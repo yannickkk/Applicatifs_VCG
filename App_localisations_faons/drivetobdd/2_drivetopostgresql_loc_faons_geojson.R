@@ -37,10 +37,6 @@ for (p in mypackages){
   }
 }
 
-con<- dbConnect(PostgreSQL(), host="pggeodb.nancy.inra.fr", dbname="db_cefs", user="db_cefs_terrain", password="terrain")
-#con<- dbConnect(PostgreSQL(), host="localhost", dbname="db_chevreuils", user="postgres", password="postgres")
-
-
 ####https://googledrive.tidyverse.org/reference/drive_download.html
 source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
 #setwd("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Programmes/R/google_drive/DATA")
