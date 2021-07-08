@@ -1,0 +1,8 @@
+#trovan<-serialConnection("get_rfid", port = "COM4", mode ="9600,N,8,1", newline = 1, translation = "cr", handshake = "xonxoff")
+trovan<-serialConnection("get_rfid", port = "ttyUSB0", mode ="9600,n,8,1", newline = 1, translation = "cr", handshake = "xonxoff")
+open(trovan)
+wait(1)
+inf<-write.serialConnection(trovan,"C")
+wait(40)
+resultat<-read.serialConnection(trovan)
+close(trovan)
