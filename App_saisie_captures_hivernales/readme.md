@@ -19,3 +19,5 @@ Le raspberry est également connecté à un lecteur RFID permettant la lecture d
 ![image](https://user-images.githubusercontent.com/39738426/124927220-af42a600-dffe-11eb-873d-df555f101853.png)
 
 *ces métadonnées permettent à un utilisateur de la base de données de savoir quelles recherches peuvent être entreprise sur ce type d'échantillons de sang*
+
+[présentation du projet lors de l'atelier carnet électronique de terrain 2018](https://oreme.org/app/uploads/Chaval_Atelier2018.pdf)
