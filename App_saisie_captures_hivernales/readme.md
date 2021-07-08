@@ -9,3 +9,6 @@ Le raspberry est également connecté à un lecteur RFID permettant la lecture d
 
  ![image](https://user-images.githubusercontent.com/39738426/124926204-87067780-dffd-11eb-8c7e-4978d715afa0.png)
 *prélèvement d'achantillon de sang sur un animal. Un prélèvement sur l'application se caractérise par un type (ici sang), une localisation (ici jugulaire), un conditionnement (ici tube rouge), un solvant (ici sec) et un nombre d'échantillons collectés. une fois le prélèvement validé, il s'affiche dans un data table en dessous de la zone de saisie. Les données et les prélèvements front l'objet d'une surveillance de la part de l'applicatif. Ainsi si une mesure ou un prélèvement n'a pas été réalisé, il s'affiche dans l'onglet checklist1 ce qui permet à tout moment à l'opérateur de vérifier quelles mesures ou prélèvements manque encore.* 
+
+![image](https://user-images.githubusercontent.com/39738426/124926974-668aed00-dffe-11eb-9361-20f23b1d0fc2.png)
+*la base données est alimentée en temps réelle lors de la saisie comme le montre cette vue de la base de données.*
