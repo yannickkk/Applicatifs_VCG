@@ -5,28 +5,12 @@
 #  un fois l'import réalisé, les données des trois derniers jours des faons sont re-extrait de la base afin de régénérer le geojson et d'avoir le lundi les locs du vendredi encore présentent sur l'app
 #  Documentation:
 #  Si la colonne evenement = "cadavre" pour une loclaisation alors l'animal est déclaré mort dans la table t_animal_ani et les coordonnées du cadavre sont importées dans les champs ani_mort_x et ani_mort_y
-#
+#  ####https://googledrive.tidyverse.org/reference/drive_download.html
 #
 #
 #
 #------------------------------------------------------------------------------
 #-------------------------- environnement de travail --------------------------
-mypackages<-c("shiny", "shinyjs","plotly","reshape","dplyr","tidyverse","tidyr","markdown","leaflet","leaflet.minicharts","units","maptools","leafsync","sodium","rdrop2","lubridate", "magrittr", "sf","RPostgreSQL","data.table")
-for (p in mypackages){
-if(!require(p, character.only = TRUE)){
-install.packages(p)
-library(p, character.only = TRUE)
-}
-}
-#-----------------------------------------------------------------------------
-#-------------------------- connection aux bases de donnees ------------------
-#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R")
-#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R"))
-#source("C:/Users/ychaval/Documents/BD_CEFS/con_serveur_dbcefs.R")
-# source("C:/Users/ychaval/Documents/BD_Gardouch/Programmes/R/con_serveur_dbgardouch.R")
-#-------------------------- chargement de mes fonctions ----------------------
-source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
-
 #####auto install packages
 
 mypackages<-c("googledrive", "foreign", "RPostgreSQL","uuid","lubridate","rgdal","sf", "dplyr", "as_tibble")
@@ -37,8 +21,15 @@ for (p in mypackages){
   }
 }
 
-####https://googledrive.tidyverse.org/reference/drive_download.html
+#-----------------------------------------------------------------------------
+#-------------------------- connection aux bases de donnees ------------------
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R")
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R"))
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_serveur_dbcefs.R")
+# source("C:/Users/ychaval/Documents/BD_Gardouch/Programmes/R/con_serveur_dbgardouch.R")
+#-------------------------- chargement de mes fonctions ----------------------
 source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
+
 #setwd("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Programmes/R/google_drive/DATA")
 setwd("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/DonneesBrutes")
 drive_download(as_id(drive_find(pattern = "saisie_localisation_faons.geojson")$id), overwrite = TRUE)
