@@ -6,3 +6,5 @@
 ![image](https://user-images.githubusercontent.com/39738426/124930439-a0112780-e001-11eb-8a05-0a14a57cf621.png)
 
 *lorsque l'on clique sur un animal, l'application affiche des informations sur celui-ci. Sa mémoire, la semaine de dernier contact que l'on peut changer, le type de collier que porte l'animal, son identifiant (et son nom), les couleurs du collier et du boitier, l'état du collier qui peut être modifié durant le suivi (dysfonctionnement, alarme GPS, alarme mortalité, arrêt total), la cause de fin de suivi, la date de fin de suivi, la date approximative de fin de suivi (champ texte), la date de mort, la cause de mort, le poids à la mort, la longueur de la patte arrière à la mort, si le cadavre est congelé pour analyses.*
+
+Ses informations permettent une remise à jour de la table animal de la base de données pour els individus consernés par le suivi en fin d'année.
