@@ -14,6 +14,7 @@
 ###https://shiny.rstudio.com/reference/shiny/0.11/dateInput.html
 #####callback DT editable
 ##https://stackoverflow.com/questions/57215607/render-dropdown-for-single-column-in-dt-shiny
+####https://laustep.github.io/stlahblog/posts/DTcallbacks.html
 #
 #
 #
