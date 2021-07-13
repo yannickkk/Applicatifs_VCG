@@ -1,8 +1,9 @@
-#------------------------------------TITRE--------------------------------------
+#------------------------------------Intégration des données de suivi adultes--------------------------------------
 #  Auteur: Yannick Chaval, INRAE (French National Research Institute for Agriculture, Food and Environment), CEFS (Wildlife, Behaviour and Ecology Research Unit)
 #  Date:  13/07/2021
-#  Description:
-# Documentation:
+#  Version: V2.0
+#  Description: Par rapport à la version V1.0, cette version inclus la mise à jour de ani_date_fin_suivi au mercredi de la semaine de dernier contact et la maj de ani_date_fin_suivi = ani_date_mort pour les animaux morts
+#  Documentation:
 #
 #
 #
