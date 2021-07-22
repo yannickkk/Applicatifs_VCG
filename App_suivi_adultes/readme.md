@@ -120,7 +120,7 @@ Si ce champ est renseigné à mi-juillet 2021 par exemple, on pourra aussi mettr
 
 L'application affiche un calendrier qui permet de choisir la date de mort. La date de mort n'est pas forcément la date de fin de suivi. Par exemple un animal peut avoir un collier qui tombe en panne le 15 Juillet 2021 et qui est retrouvé mort le 15 Novembre de la même année. Dans ce cas la Date_fin_suivi = 15/07/2021 et Date_mort = 15/11/2021.
 
-### Date_mort: (champ éditable) 
+### Date_mort_text: (champ éditable) 
 
 Si la date n'est pas connue de façon précise, elle peut être renseignée par exemple "mi-Juillet".
 
