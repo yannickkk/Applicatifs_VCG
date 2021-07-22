@@ -32,22 +32,55 @@ Il n'est pas complètement inutile d'écouter de temps à autre un individu dont
 
 permet de savoir de quel type de collier est équipé l'animal (VHF/GPS ou GSM).
 
-**Collier:** (champ non éditable): indique la couleur du collier de l'animal. Sur l'écran de géolocalisation le pourtour du cercle représentant l'individu est de cette couleur.
+### Animal:(champ non éditable)
 
-**Boitier:** (champ non éditable): indique la couleur du boitier de l'animal. Sur l'écran de géolocalisation le remplissage du cercle représentant l'individu est de cette couleur.
+codification reprenant le sexe et l'age (à la capture d'hiver) de l'animal _ l'identifiant humain unique de la base de données (ani_etiq).
 
-**Alarme_GPS:** (champ éditable): case à cocher qui permet de transmettre aux opérateurs suivant si le collier indique une alarme GPS.
+Codification pour les femelles et les mâles respectivement: 
+
+**Adultes:**
+f_XXXX
+m_XXXX
+
+**Yearling:**
+fy_XXXX
+my_XXXX
+
+**Jeunes:**
+fj_XXXX
+mj_XXXX
 
 
-**Alarme_mortalité:** (champ éditable): case à cocher qui permet de transmettre aux opérateurs suivant si le collier indique indique que l'animal est mort (peut être lié à un dysfonctionnement).
+### Collier: (champ non éditable)
+
+indique la couleur du collier de l'animal. Sur l'écran de géolocalisation le pourtour du cercle représentant l'individu est de cette couleur.
+
+### Boitier: (champ non éditable)
+
+indique la couleur du boitier de l'animal. Sur l'écran de géolocalisation le remplissage du cercle représentant l'individu est de cette couleur.
+
+### Alarme_GPS: (champ éditable)
+
+case à cocher qui permet de transmettre aux opérateurs suivant si le collier indique une alarme GPS.
 
 
-**Alarme_intermittente:** (champ éditable): divers alarmes peuvent apparaitre et disparaitre.
+### Alarme_mortalité: (champ éditable)
+
+case à cocher qui permet de transmettre aux opérateurs suivant si le collier indique indique que l'animal est mort (peut être lié à un dysfonctionnement).
 
 
-**Hors_service:** (champ éditable): plus de signal VHF, l'animal est perdu.
+### Alarme_intermittente: (champ éditable)
 
-**Cause de fin de suivi:** ce champ permet de rendre compte de la cause qui a conduit à la fin du suivi de l'animal. C'est une liste déroulante qui comporte les choix suivant.
+divers alarmes peuvent apparaitre et disparaitre.
+
+
+### Hors_service: (champ éditable)
+
+plus de signal VHF, l'animal est perdu.
+
+### Cause_fin_suivi: (champ éditable) 
+
+ce champ permet de rendre compte de la cause qui a conduit à la fin du suivi de l'animal. C'est une liste déroulante qui comporte les choix suivant.
 
 **Mort récupération du collier sur cadavre ou au sol avec signe de prédation** : le collier a été récupéré sur un cadavre de chevreuil ou le collier a été retrouvé au sol avec des marques évidentes de prédation.
 
@@ -63,4 +96,62 @@ permet de savoir de quel type de collier est équipé l'animal (VHF/GPS ou GSM).
 
 **disperseur collier perdu**: l'animal est un yearling équipé d'un GPS ou d'un VHF et il a disparu entre Mars et fin Avril.
 
+### Date_fin_suivi: (champ éditable) 
+
+L'application affiche un calendrier qui permet de choisir la date de fin de suivi. Cette date ne correspond pas forcément à la date de mort. Par exemple dans le cas d'un collier au sol sans trace de prédation ou d'un collier en panne, la date de de fin de suivi sera renseignée et la date de mort ne le sera pas. 
+
+![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
+La date de mort est forcément égale ou postérieure à la date de fn de suivi.
+
+### Date_fin_suivi_text: (champ éditable) 
+
+Si la date n'est pas connue de façon précise, elle peut être renseignée par exemple "mi-Juillet".
+
+![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
+Si ce champ est renseigné à mi-juillet 2021 par exemple, on pourra aussi mettre la date Date_fin_suivi à 15/07/2021. Cela permet d'avoir une date exploitable en terme d'analyse tout en gardant l'information que celle-ci est approximative.
+
+### Date_mort: (champ éditable) 
+
+L'application affiche un calendrier qui permet de choisir la date de mort. La date de mort n'est pas forcément la date de fin de suivi. Par exemple un animal peut avoir un collier qui tombe en panne le 15 Juillet 2021 et qui est retrouvé mort le 15 Novembre de la même année. Dans ce cas la Date_fin_suivi = 15/07/2021 et Date_mort = 15/11/2021.
+
+### Date_mort: (champ éditable) 
+
+Si la date n'est pas connue de façon précise, elle peut être renseignée par exemple "mi-Juillet".
+
+![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
+Si ce champ est renseigné à mi-juillet 2021 par exemple, on pourra aussi mettre la date Date_mort à 15/07/2021. Cela permet d'avoir une date exploitable en terme d'analyse tout en gardant l'information que celle-ci est approximative.
+
+### Cause_mort: (champ éditable) 
+
+C'est un champ texte qui permet de renseigner la cause de la mort.
+
+### Cause_mort_classe: (champ éditable)
+
+C'est un menu déroulant qui permet de classifier la cause de la mort (permet aux analystes de gagné beaucoup de temps pour trier les données).
+
+Les choix disponibles sont: Chasse, Predation_chien, Predation_loup, Predation_renard, Predation_sanglier, Predation, Accident, Parasitisme/maladie, Collision, inconnue
+
+### Poids_mort: (champ éditable)
+
+Le poids de l'animal mort. Un animal mort n'est pesé que si sa masse est comparable à ce qu'elle serait si l'animal était vivant.
+
+### Lpa_mort: (champ éditable)
+
+La longueur de la patte arrière est mesuré à la maison de terrain avec une toise, sa valeur est données en centimètres
+
+### Lpa_mort: (champ éditable)
+
+Est une cas à coché si l'animal a été conservé au congélateur pour des analyses ultérieures.
+
+### Remarque (champ éditable)
+
+En début de saison ce champ est alimenté pour chaque animal avec des données de capture consernant l'état général de l'animal (blessures, diarrhée) à la capture d'hiver.
+
+### Ani_id (champ non éditable)
+
+est l'identifiant automatique de l'animal dans la base de données.
+
+### Nom
+
+Le nom de l'animal. Seul les animaux capturés faons on un nom.
 
