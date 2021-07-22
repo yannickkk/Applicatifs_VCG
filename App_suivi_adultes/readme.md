@@ -159,5 +159,5 @@ est l'identifiant automatique de l'animal dans la base de données.
 
 ### Nom
 
-Le nom de l'animal. Seul les animaux capturés faons on un nom.
+Le nom de l'animal. Seul les animaux capturés faons ont un nom. Le préfixe représente la lignée et le suffixe l'année de naissance.
 
