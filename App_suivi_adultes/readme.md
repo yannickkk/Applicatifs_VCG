@@ -39,15 +39,21 @@ codification reprenant le sexe et l'age (à la capture d'hiver) de l'animal _ l'
 Codification pour les femelles et les mâles respectivement: 
 
 **Adultes:**
+
 f_XXXX
+
 m_XXXX
 
 **Yearling:**
+
 fy_XXXX
+
 my_XXXX
 
 **Jeunes:**
+
 fj_XXXX
+
 mj_XXXX
 
 
