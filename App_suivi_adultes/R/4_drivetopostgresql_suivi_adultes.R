@@ -1,9 +1,9 @@
 #------------------------------------Intégration des données de suivi adultes--------------------------------------
 #  Auteur: Yannick Chaval, INRAE (French National Research Institute for Agriculture, Food and Environment), CEFS (Wildlife, Behaviour and Ecology Research Unit)
 #  Date:  13/07/2021
-#  Version: V2.0
+#  Version: V2.0.1
 #  Description: Par rapport à la version V1.0, cette version inclus la mise à jour de ani_date_fin_suivi au mercredi de la semaine de dernier contact et la maj de ani_date_fin_suivi = ani_date_mort pour les animaux morts
-#  Documentation:
+#  Documentation: modification. ani_date_fin_suivi ne peut pas être mise à jour à partir de la ani_date_mort. D'autre part on ne met à jour la date de fin de suivi par le mercredi de la semaine de dernier contact que si une date de fin de suivi n'a pas été rentrée avant 
 #
 #
 #
@@ -122,11 +122,6 @@ for (i in 1:length(year)){
   dd<-as.Date(paste(year[i], stringr::str_pad(week[i],width=2, pad="0"), "3", sep=""), "%Y%U%u")
   #datt<-append(datt,as.character(dd))  
   dbSendQuery(serveur,
-              paste0("UPDATE public.t_animal_ani SET ani_date_fin_suivi = '",dd,"' where ani_etiq = '",sel$ani_etiq[i],"'; "))
+              paste0("UPDATE public.t_animal_ani SET ani_date_fin_suivi = '",dd,"' where ani_etiq = '",sel$ani_etiq[i]," and ani_date_fin_suivi is null'; "))
 }
-
-######si une date de dernier contact est entree pour un individu mort, la ligne de commande au dessus va rendre approximative la date de fin de suivi je remets donc a jour la date de fin de suivi pour les animaux pour lesquels ani_mortalite = TRUE
-
-dbSendQuery(serveur,
-            paste0("UPDATE public.t_animal_ani SET ani_date_fin_suivi = ani_date_mort where ani_mortalite = TRUE; "))
 
