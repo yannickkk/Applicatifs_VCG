@@ -11,9 +11,13 @@ Ses informations permettent une remise à jour de la table animal de la base de 
 
 ## description des champs du formulaire
 
-**Mémoire:**  (champ non éditable): c'est la mémoire du collier, elle permet à l'opérateur de rechercher l'animal sur le récepteur VHF avec leuel il travaille sur le terrain.
+### Mémoire:  (champ non éditable): 
 
-**Semaine de dernier contact:**  (champ éditable): numéro de semaine durant laquelle le signal VHF de l'individu a été entendu la dernière fois. Cette information a deux fonctions:
+c'est la mémoire du collier, elle permet à l'opérateur de rechercher l'animal sur le récepteur VHF avec leuel il travaille sur le terrain.
+
+### Semaine de dernier contact:  (champ éditable): 
+
+numéro de semaine durant laquelle le signal VHF de l'individu a été entendu la dernière fois. Cette information a deux fonctions:
 
 Pour un opérateur de terrain regardant l'application, elle permet de savoir si il doit investir du temps pour rechercher l'individu. 
 
@@ -24,7 +28,9 @@ Pour un opérateur de terrain regardant l'application, elle permet de savoir si 
 ![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
 Il n'est pas complètement inutile d'écouter de temps à autre un individu dont le collier est déclaré hors-service et/ou qui n'a pas été entendu depuis longtemps car leur écoute procure parfois des surprises. 
  
-**Type de collier:** (champ non éditable): permet de savoir de quel type de collier est équipé l'animal (VHF/GPS ou GSM).
+### Type de collier:(champ non éditable)
+
+permet de savoir de quel type de collier est équipé l'animal (VHF/GPS ou GSM).
 
 **Collier:** (champ non éditable): indique la couleur du collier de l'animal. Sur l'écran de géolocalisation le pourtour du cercle représentant l'individu est de cette couleur.
 
