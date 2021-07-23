@@ -6,4 +6,4 @@ Le script **labels_38_12.7_Zebra420T.R** permet à partir d'une liste de prélè
 
 
 ![image](https://user-images.githubusercontent.com/39738426/126763694-c196d80f-9a24-4a86-8caf-e6e63cb8160d.png)
-*Exemple d'étiquette généré pas les scripts.*
+*Exemple d'étiquette généré pas les scripts. Attention les _ sont remplacés par des - dans le data-matrix*
