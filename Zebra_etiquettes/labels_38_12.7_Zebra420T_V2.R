@@ -1,10 +1,30 @@
-library(baRcodeR)
-#library(RPostgreSQL)
-library(stringi)
-library(openxlsx)
-library(crayon)
+#------------------------------------création d'étiquettes 38_12.7 sur imprimante zebra420T à partir d'un fichier excel--------------------------------------
+#  Auteur: Yannick Chaval, INRAE (French National Research Institute for Agriculture, Food and Environment), CEFS (Wildlife, Behaviour and Ecology Research Unit)
+#  Date:  23/07/2021
+#  Description: la V 2.0 crée à partir d'un vecteur de prélèvements les étiquettes des échantillons associés rangés dans des dossiers reprenant le nom du prélèvement
+#  Documentation:
+#
+#
+#
+#
+#
+#------------------------------------------------------------------------------
+#-------------------------- environnement de travail --------------------------
+mypackages<-c("baRcodeR", "stringi","openxlsx","crayon")
+for (p in mypackages){
+if(!require(p, character.only = TRUE)){
+install.packages(p)
+library(p, character.only = TRUE)
+}
+}
+#-----------------------------------------------------------------------------
+#-------------------------- connection aux bases de donnees ------------------
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R")
+#source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R"))
 #source("C:/Users/ychaval/Documents/BD_CEFS/con_serveur_dbcefs.R")
-#source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
+# source("C:/Users/ychaval/Documents/BD_Gardouch/Programmes/R/con_serveur_dbgardouch.R")
+#-------------------------- chargement de mes fonctions ----------------------
+source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
 
 wsr<-function(x) {
   gsub("[[:space:]]","",x)
