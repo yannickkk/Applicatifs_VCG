@@ -94,10 +94,6 @@ ce champ permet de rendre compte de la cause qui a conduit à la fin du suivi de
 
 **drop off**: l'opérateur a activé le drop off pour faire tomber le collier.
 
-**problème GPS suivi VHF**: le GPS est en alarme mais l'animal est suivi jusqu'à la perte du signal VHF.
-
-**problème drop off, fin suivi = fin VHF**: le drop off ne fonctionne pas et l'animal est suivi jusqu'à la perte du signal VHF.
-
 **collier au sol**: l'animal a perdu le collier sans qu'il y ai une trace de prédation.
 
 **disperseur collier perdu**: l'animal est un yearling équipé d'un GPS ou d'un VHF et il a disparu entre Mars et fin Avril.
