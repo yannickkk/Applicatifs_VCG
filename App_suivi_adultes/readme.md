@@ -3,6 +3,10 @@
 
 *vu de l'application de suivi des adultes. Cette application est remise à jour après chaque campagne de capture hivernale à partir de la base de données. Elle recence tous les animaux équipés d'un collier et d'un boitier GPS ou VHF actif. la couleur du collier associée à celle du boitier forme un code qui permet de reconnaitre l'animal visuellement (en plus de sa fréquence d'émission qui est propre au boitier). l'application affiche les animaux en les représentant par des cercles. La bordure du cercle représente la couleur du collier de l'animal et la couleur du fond du cercle est celle du boitier. Chaque cercle est labelisé avec le numéro de mémoire de l'animal et la semaine de dernier contact. Cet application permet aux opérateurs chargés du suivi de localiser la position des animaux lors de leur controle hebdomadaire. La semaine suivante de nouveaux opérateurs auront instentanément la dernière position connue de chaque animal ce qui offre un gain de temps considérable dans la détection des animaux.*
 
+![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
+Il est possible de rechercher un animal en cliquant sur l'icone loupe en haut à droite de l'écran et entrant son numéro de mémoire dans la zone de recherche. La carte est alors centrée (au niveau de zoom actuel) sur l'individu concerné.  
+
+
 ![image](https://user-images.githubusercontent.com/39738426/124930439-a0112780-e001-11eb-8a05-0a14a57cf621.png)
 
 *lorsque l'on clique sur un animal, l'application affiche des informations sur celui-ci. Sa mémoire, la semaine de dernier contact que l'on peut changer, le type de collier que porte l'animal, son identifiant (et son nom), les couleurs du collier et du boitier, l'état du collier qui peut être modifié durant le suivi (dysfonctionnement, alarme GPS, alarme mortalité, arrêt total), la cause de fin de suivi, la date de fin de suivi, la date approximative de fin de suivi (champ texte), la date de mort, la cause de mort, le poids à la mort, la longueur de la patte arrière à la mort, si le cadavre a été congelé pour des analyses ultérieures.*
