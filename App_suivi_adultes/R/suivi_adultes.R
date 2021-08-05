@@ -3,7 +3,7 @@
 #  Date:  15/02/2021
 #  Description: generer un geojson pour l'application suivi_adultes de la tablette a partir des donnees de la bd_chevreuils contenue sur le raspberry
 #  Documentation:
-#
+#  modification du 05/08/2021 renommage des lignes afin de pouvoir utiliser la recherche des individus par numéro de mémoire dans l'app
 #
 #
 #
@@ -23,6 +23,7 @@ source("C:/Users/ychaval/Documents/BD_CEFS/con_raspi_dbchevreuils.R")
 source("C:/Users/ychaval/Documents/BD_CEFS/con_serveur_dbcefs.R")
 #-------------------------- chargement de mes fonctions ----------------------
 source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
+
 
 annee<-2021
 memoires_faons_n_1<-v2dbn(c(32,119,40,31)) ####mémoire des colliers faons de l'annee d'avant
@@ -131,6 +132,9 @@ qfield<-result
 qfield<-qfield[,c("Memoire","Type_collier","Animal","Collier","Boitier","ani_id","nom","Remarque","Date_dernier_contact","Alarme_GPS","Alarme_mortalite","Alarme_intermittente","Hors_service","Cause_fin_suivi","Date_fin_suivi","Date_fin_suivi_text","Date_mort","Date_mort_text","Cause_mort","Cause_mort_classe","Pds_mort","Lpa_mort","Congel","x","y")]
 qfield[,"Date_dernier_contact"]<-week(Sys.Date())
 
+####je renomme les lignes pour que dans l'app Qfield on puisse rechercher les individus par mémoire (l'appli zoom alors sur l'individus recherché)
+row.names(qfield)<-wsr(qfield[,"Memoire"])
+
 coordinates(qfield) = c("x", "y")
 dir.create(paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/",year(Sys.Date()),""))
 rawPath<-"C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/"
@@ -138,5 +142,6 @@ dataPath<-paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs
 files<-grep("suivi_adultes",list.files(rawPath,include.dirs = FALSE), value =TRUE)
 file.copy(paste(rawPath, files, sep = .Platform$file.sep), dataPath, overwrite = TRUE)
 setwd(paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/",year(Sys.Date()),""))
+setwd("C:/Users/ychaval/Desktop")
 writeOGR(qfield, dsn=paste0(dataPath,"suivi_adultes.geojson"), layer="suivi_adultes", driver="GeoJSON", check_exists=TRUE, overwrite_layer= TRUE, delete_dsn=TRUE, encoding="UTF-8" )
 writeOGR(qfield, dsn="suivi_adultes.geojson", layer="suivi_adultes", driver="GeoJSON", check_exists=TRUE, overwrite_layer= TRUE, delete_dsn=TRUE, encoding="UTF-8" )
