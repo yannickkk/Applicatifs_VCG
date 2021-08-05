@@ -110,6 +110,10 @@ L'application affiche un calendrier qui permet de choisir la date de fin de suiv
 ![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
 La date de mort est forcément égale ou postérieure à la date de fn de suivi.
 
+
+![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
+lorsque qu'une  date_fin_suivi est entrée pour un individu, sont étiquette (mémoire + semaine de dernier contact) ne s'affiche plus. Seul s'affiche son symbole (couleur collier/couleur boitier). Ainsi l'affichage est allégé et on sait de suite si un animal doit être recheché ou non. L'affichage du symbole est concervée de façon à pouvoir corriger une erreur de frappe (date_fin_suivi déclarée par erreur) ou relancer le suivi d'un animal dont le collier avait cessé d'émettre mais qui se remet à fonctionner.
+
 ### Date_fin_suivi_text: (champ éditable) 
 
 Si la date n'est pas connue de façon précise, elle peut être renseignée par exemple "mi-Juillet".
