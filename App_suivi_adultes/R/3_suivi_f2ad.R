@@ -27,15 +27,21 @@ source("C:/Users/ychaval/Documents/BD_CEFS/con_serveur_dbcefs.R")
 #-------------------------- chargement de mes fonctions ----------------------
 source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
 
+setwd(paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/",annee,""))
+datad<-st_read("suivi_adultes.geojson")
 
-dat<-utf8(dbGetQuery(serveur,"
+datad<-as.data.frame(datad)
+
+annee_suivi<-year(Sys.Date())
+
+dat<-utf8(dbGetQuery(serveur,paste0("
 select
 ani_id, ani_etiq, ani_name, rfi_tag_code, cap_bague, cap_tag_droit, cap_tag_gauche, cap_tag_droit_metal, cap_tag_gauche_metal, cap_annee_suivi, cap_date, ani_mere_observee, ani_mere_pedigree, ani_pere_pedigree, ani_fratrie, ani_fratrie_oct, ani_surv_faon_marque_oct, ani_agres_faon_marque, ani_sexe, cap_age_classe, cap_poids, cap_lpa, sit_nom_court, teq_nom_court, eqt_id_usuel, mar_libelle, mod_libelle, eqa_date_debut, eqa_date_fin, eqa_date_fin_suivi, eqa_date_fin_suivi_text, eqa_cause_fin_suivi, eqa_dernier_contact, ani_mortalite, ani_date_mort, ani_cause_mort, eqa_activite, eqa_probleme, eqa_date_fin_text, eqa_date_fin_arrondi, ani_date_mort_arrondi, ani_date_mort_text, ani_poids_mort, ani_poids_mort_na, ani_remarque, ani_mort_x, ani_mort_y, ani_inconnu, ani_cause_mort_classes, ani_necropsie, ani_crane, ani_lpa_mort, ani_remarque_suivi, cap_id, cap_faon, cap_age, cap_age_corrige, cap_circou, cap_etat_sante, cap_heure_lacher, cap_proximite_contact, cap_pertinent, cap_num_sabot, cap_age_faon, cap_telemetrie, cap_date_fin_capteur, cap_ect_id, cap_ecl_id, sit_id, sen_association, eqc_couleur_boitier, eqc_couleur_collier, eqc_memoire, eqc_remarque, cpt_nom_capteur
 FROM public.v_individus_total
 where concat(ani_id, cap_date) in (
   select concat(ani_id, max(cap_date))
-  FROM public.v_individus_total where  cap_annee_suivi = 2021 and eqa_date_fin is null and cap_age_classe = 'faon' and teq_nom_court = 'VHF' group by ani_id)
-"))
+  FROM public.v_individus_total where  cap_annee_suivi = ",annee_suivi," and eqa_date_fin is null and cap_age_classe = 'faon' and teq_nom_court = 'VHF' group by ani_id)
+")))
 
 loc<-utf8(dbGetQuery(serveur,
 paste0("

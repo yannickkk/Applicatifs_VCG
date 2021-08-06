@@ -4,7 +4,7 @@
 #  Description: generer un geojson pour l'application suivi_adultes de la tablette a partir des donnees de la bd_chevreuils contenue sur le raspberry
 #  Documentation:
 #  modification du 05/08/2021 renommage des lignes afin de pouvoir utiliser la recherche des individus par numéro de mémoire dans l'app
-#
+#  modification du 06/08/2021 le script prend en entrée le geojson de suivi de l'année d'avant et récupère pour les animaux dont la date de fin de suivi est nulle, il ajoute les animaux nouvellement capturés.
 #
 #
 #
@@ -24,28 +24,22 @@ source("C:/Users/ychaval/Documents/BD_CEFS/con_serveur_dbcefs.R")
 #-------------------------- chargement de mes fonctions ----------------------
 source("C:/Users/ychaval/Documents/BD_tools/Mes_fonctions_R/fonctions.R")
 
+annee<-year(Sys.Date())
 
-annee<-2021
-memoires_faons_n_1<-v2dbn(c(32,119,40,31)) ####mémoire des colliers faons de l'annee d'avant
-memoires_faons_n_2<-v2dbn(c(40,31)) ####mémoire des colliers faons de deux ans avant
-ani_etiq<-v2db(c("F1349")) ####collier vhf ou GPS non récupérés à continuer à suivre
+####je recupere les animaux de l'année d'avant qui n'ont pas de date_fin_suivi
+setwd(paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/",annee-1,""))
 
+dat<-st_read("suivi_adultes.geojson")
+dat<-as.data.frame(dat)
+dat0<-dat[which(is.na(dat[,"Date_fin_suivi"])),]
 
-utf8 <- function(x) {
-  # Declare UTF-8 encoding on all character columns:
-  chr <- sapply(x, is.character)
-  x[, chr] <- lapply(x[, chr, drop = FALSE], `Encoding<-`, "UTF-8")
-  # Same on column names:
-  Encoding(names(x)) <- "UTF-8"
-  return(x)
-}
+########pour ajouter des animaux à la main si besoin
+# memoires_faons_n_1<-v2dbn(c(32,119,40,31)) ####mémoire des colliers faons de l'annee d'avant
+# memoires_faons_n_2<-v2dbn(c(40,31)) ####mémoire des colliers faons de deux ans avant
+# ani_etiq<-v2db(c("F1349")) ####collier vhf ou GPS non récupérés à continuer à suivre
+# dato<- utf8(dbGetQuery(raspi, paste0("SELECT distinct ON (ani_etiq) * FROM public.v_individus_total where eqc_memoire in ",memoires_faons_n_1," and cap_annee_suivi = ",annee-1," or  eqc_memoire in ",memoires_faons_n_2," and cap_annee_suivi = ",annee-2," or ani_etiq in ",ani_etiq," order by ani_etiq, cap_id DESC;")))
 
-
-#############selection des individus à suivre
-dato<- utf8(dbGetQuery(raspi, paste0("SELECT distinct ON (ani_etiq) * FROM public.v_individus_total where eqc_memoire in ",memoires_faons_n_1," and cap_annee_suivi = ",annee-1," or  eqc_memoire in ",memoires_faons_n_2," and cap_annee_suivi = ",annee-2," or ani_etiq in ",ani_etiq," order by ani_etiq, cap_id DESC;")))
-data<- utf8(dbGetQuery(raspi, paste0("SELECT * FROM public.v_individus_total where cap_annee_suivi = ",annee," and ani_mortalite = FALSE ;"))) ##and ani_etiq != '3141'
-
-dat<-rbind(data,dato)
+dat<- utf8(dbGetQuery(raspi, paste0("SELECT * FROM public.v_individus_total where cap_annee_suivi = ",annee," and ani_mortalite = FALSE ;"))) ##and ani_etiq != '3141'
 
 dbDisconnect(raspi)
 #fwrite(dat, file = "C:/Users/ychaval/Documents/BD_tools/saisie_capture_shiny/DonneesBrutes/suivi.csv")
@@ -109,13 +103,10 @@ dat[is.na(dat[,"sen_association"]),"sen_association"]<-""
 dat<-as.data.frame(dat)
 dat[,"Type_collier"] <-paste0(dat[,"teq_nom_court"],dat[,"sen_association"])
 
-
-
 qfield<-dat[,c("eqc_memoire","Type_collier","telemetrie","eqc_couleur_collier", "eqc_couleur_boitier","ani_id","ani_name","cap_etat_sante","sit_nom_court")]
 names(qfield)<-c("Memoire","Type_collier","Animal","Collier","Boitier","ani_id","nom","Remarque","sit_nom_court")
 qfield<-as.data.frame(qfield)
 qfield[,c("Date_dernier_contact","Alarme_GPS","Alarme_mortalite","Alarme_intermittente","Hors_service","Cause_fin_suivi","Date_fin_suivi","Date_fin_suivi_text","Date_mort","Date_mort_text","Cause_mort","Cause_mort_classe","Pds_mort","Lpa_mort","Congel")]<-NA
-
 
 qfield<-qfield[order(qfield$sit_nom_court),]
 
@@ -136,12 +127,15 @@ qfield[,"Date_dernier_contact"]<-week(Sys.Date())
 row.names(qfield)<-wsr(qfield[,"Memoire"])
 
 coordinates(qfield) = c("x", "y")
+
+qfied<-rbind(qfied,dato)
+
 dir.create(paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/",year(Sys.Date()),""))
 rawPath<-"C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/"
 dataPath<-paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/",year(Sys.Date()),"/")
 files<-grep("suivi_adultes",list.files(rawPath,include.dirs = FALSE), value =TRUE)
 file.copy(paste(rawPath, files, sep = .Platform$file.sep), dataPath, overwrite = TRUE)
 setwd(paste0("C:/Users/ychaval/Documents/BD_CEFS/data/VCG/data_suivi/Outputs/suivi_adultes/",year(Sys.Date()),""))
-setwd("C:/Users/ychaval/Desktop")
 writeOGR(qfield, dsn=paste0(dataPath,"suivi_adultes.geojson"), layer="suivi_adultes", driver="GeoJSON", check_exists=TRUE, overwrite_layer= TRUE, delete_dsn=TRUE, encoding="UTF-8" )
-writeOGR(qfield, dsn="suivi_adultes.geojson", layer="suivi_adultes", driver="GeoJSON", check_exists=TRUE, overwrite_layer= TRUE, delete_dsn=TRUE, encoding="UTF-8" )
+#writeOGR(qfield, dsn="suivi_adultes.geojson", layer="suivi_adultes", driver="GeoJSON", check_exists=TRUE, overwrite_layer= TRUE, delete_dsn=TRUE, encoding="UTF-8" )
+
