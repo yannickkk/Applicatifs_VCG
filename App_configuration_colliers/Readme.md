@@ -79,7 +79,8 @@ C'est le cas de :
 ![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
 *Le numéro de mémoire doit être unique. Si le numéro de mémoire existe déjà pour l'année sélectionnée, l'application affiche une pop-up d'alerte et propose l'annulation de la saisie ou la mise à jour du collier qui correspond à cette mémoire*
 
-**Capteurs associés**: Capteurs associés au collier GPS/GSM/VHF. Donne le choix d'un ensemble de capteurs: activité, proximité, accéléromètre, magnétomètre.
-
 ![image](https://user-images.githubusercontent.com/39738426/130608527-b0c49275-9655-4bd8-892f-2b7520378365.png)
 *exemple d'une tentative d'utilisaion d'une mémoire déjà attribuée à un autre collier pour l'année sélectionnée. Un message d'alerte laisse le choix d'annuler la saisie ou de mettre à jour les données de collier pour cette mémoire*
+
+**Capteurs associés**: Capteurs associés au collier GPS/GSM/VHF. Donne le choix d'un ensemble de capteurs: activité, proximité, accéléromètre, magnétomètre.
+
