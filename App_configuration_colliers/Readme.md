@@ -77,10 +77,14 @@ C'est le cas de :
 **Mémoire récepteur**: un entier de 1 et 257 qui défini la mémoire du collier dans les récepteurs utilisés sur le terrain.
 
 ![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
-*Le numéro de mémoire doit être unique. Si le numéro de mémoire existe déjà pour l'année sélectionnée, l'application affiche une pop-up d'alerte et propose l'annulation de la saisie ou la mise à jour du collier qui correspond à cette mémoire*
+*Le numéro de mémoire doit être unique. Si le numéro de mémoire existe déjà pour l'année sélectionnée, l'application affiche une pop-up d'alerte et propose le changement de la mémoire pour ce collier ou la mise à jour du collier qui correspond à cette mémoire*
 
 ![image](https://user-images.githubusercontent.com/39738426/130608527-b0c49275-9655-4bd8-892f-2b7520378365.png)
-*exemple d'une tentative d'utilisaion d'une mémoire déjà attribuée à un autre collier pour l'année sélectionnée. Un message d'alerte laisse le choix d'annuler la saisie ou de mettre à jour les données de collier pour cette mémoire*
+*exemple d'une tentative d'utilisaion d'une mémoire déjà attribuée à un autre collier pour l'année sélectionnée. Un message d'alerte laisse le choix de changer la mémoire pour ce collier ou de mettre à jour les données de collier pour cette mémoire*
 
 **Capteurs associés**: Capteurs associés au collier GPS/GSM/VHF. Donne le choix d'un ensemble de capteurs: activité, proximité, accéléromètre, magnétomètre.
 
+![image](https://user-images.githubusercontent.com/39738426/130609494-dc182b56-04c9-4cc7-b7d7-19f5e4320fba.png)
+Une fois l'ensemble des champs ci-dessus remplis, le bouton change de couleur pour signifier que les données peuvent être enregistrées.
+
+Deux autres champs désignant la couleur du collier et la couleur du boitier permettent de finaliser la configuration de l'appareil. Ces couleurs permettent une identification visuelle des animaux sur le terrain.  
