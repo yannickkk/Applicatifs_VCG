@@ -37,4 +37,16 @@ C'est le cas de :
 **Modèle du collier**: liste des modèles utilisés au laboratoires.
 
 ![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
-Les choix sont imbriqués, ainsi le choix d'un type de collier, contraint les marques disponibles et les marques contraignent les modèles disponibles. 
+*Les choix sont imbriqués, ainsi le choix d'un type de collier, contraint les marques disponibles et les marques contraignent les modèles disponibles.* 
+
+![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
+*Seule la fréquence de l'émetteur VHF n'est pas un champ obligatoire. cependant son alimentation est fortement recommendée de façon à pouvoir ensuite rappeler le collier sans avoir à retenir son identifiant automatique.*
+
+Une fois les caractéristiques intrinsecques du collier saisie, la validation se fait en pressant el bouton "submit"
+
+![image](https://user-images.githubusercontent.com/39738426/130601782-4ce1e93f-eae4-418a-b2f4-7318105d853a.png)
+*exemple de la saisie d'un collier fictif montrant les différents modèles de colliers GPS disponibles pour la marque Vectronic Aerospace.*
+
+![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
+*Lors de la commande de nouveau modèles de colliers, s'adresser au responsable des systèmes d'information pour mettre à jour les listes de choix.*
+
