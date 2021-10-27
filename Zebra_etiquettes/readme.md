@@ -7,3 +7,8 @@ Le script **labels_38_12.7_Zebra420T.R** permet à partir d'une liste de prélè
 
 ![image](https://user-images.githubusercontent.com/39738426/126763694-c196d80f-9a24-4a86-8caf-e6e63cb8160d.png)
 *Exemple d'étiquette généré pas les scripts. Attention les _ sont remplacés par des - dans le data-matrix*
+
+Le script **labels_38_12.7_Zebra420T.R** code le qrcode en json pour la lecture dans collec-science
+
+![image](https://user-images.githubusercontent.com/39738426/139062499-2b5e8235-1c5e-4602-ba2c-59ef4848d6bd.png)
+*Exemple d'étiquette généré pas le script **labels_38_12.7_Zebra420T.R**. Attention les _ sont remplacés par des - dans le data-matrix*
