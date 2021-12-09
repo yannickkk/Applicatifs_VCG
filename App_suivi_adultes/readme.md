@@ -97,7 +97,7 @@ ce champ permet de rendre compte de la cause qui a conduit à la fin du suivi de
 
 **problème VHF**: le signal VHF du collier ne fonctionne plus.
 
-**drop off**: l'opérateur a activé le drop off pour faire tomber le collier.
+**drop off**: l'opérateur a activé le drop off pour faire tomber le collier ou le collier est tombé à la date programmée du drop off.
 
 **collier au sol**: l'animal a perdu le collier sans qu'il y ai une trace de prédation.
 
