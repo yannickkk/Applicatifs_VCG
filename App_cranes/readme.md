@@ -61,9 +61,6 @@ lorsqu'une marque plastique ou métal est présente dans le sachet qui contient 
 
 bague dans cap_tag_ droit puis dans cap_tag_gauche. Par exemple dans les captures d'écran ci-dessous je recherche l'animal portant la marque 1119
 
-
-
-
 crane déjà en collection
 ![image](https://user-images.githubusercontent.com/39738426/158828052-96c167a0-be06-449e-b032-cba9b7404335.png)
 
