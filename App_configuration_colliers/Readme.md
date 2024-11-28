@@ -1,8 +1,8 @@
 # Documentation de l'application de saisie des nouveaux colliers et leur configuration annuelle pour le site d'étude des Vallons et Coteaux de Gascogne
 
-Cet applicatif sert à alimenter la base de données du site de suivi in-natura de Vallons et Coteaux de Gascogne (db_cefs).
+Cette application sert à alimenter la base de données du site de suivi in natura des Vallons et Coteaux de Gascogne (db_cefs).
 
-Les tables alimentées par cet applicatif sont contenues dans le schéma main. Elles se nomment:
+Les tables alimentées par cette application sont contenues dans le schéma public. Elles se nomment :
 
 > t_equipement_eqt
 >
@@ -13,15 +13,15 @@ Les tables alimentées par cet applicatif sont contenues dans le schéma main. E
 
 ![image](https://user-images.githubusercontent.com/39738426/130599362-d0a8be18-3b64-4784-ae44-71d3b31dd6b9.png)
 
-*L'application se compose de deux parties: 1-le formulaire de saisie des nouveaux colliers; 2-le formulaire de saisie de la confguration annuelle des colliers.*
+*L'application se compose de deux parties: 1-le formulaire de saisie des nouveaux colliers (ou de modification des colliers existant); 2-le formulaire de saisie de la confguration annuelle des colliers (ou la modification de la configuration annuelle des colliers).*
 
 ## 1- Documentation
 
-Un doucle click sur "Docmention" en haut à gauche renvoi vers la présente documentation
+Un doucle click sur "Documentation" en haut à gauche renvoi vers la présente documentation.
 
 ## 2- Caractéristiques du collier
 
-Cet onglet sert à saisir les caractéristiques d'un nouveau collier.
+Cet onglet sert à saisir les caractéristiques d'un nouveau collier. Il permet aussi de modifier les caractériqtiques d'un collier, par exemple sa fréquence d'émission VHF si celle-ci a été changée ou son modèle si celui-ci a été mal saisi. 
 
 Certains champs sont obligatoires. Celà signifie que si ils ne sont pas remplis, on en peut pas enregistrer les informations saisies.
 Ces champs sont signalés par un astérisque ![image](https://user-images.githubusercontent.com/39738426/125034814-596b0e00-e091-11eb-8d1c-7e83ac4d02fe.png)
@@ -42,7 +42,10 @@ C'est le cas de :
 ![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
 *Seule la fréquence de l'émetteur VHF n'est pas un champ obligatoire. cependant son alimentation est fortement recommandée de façon à pouvoir ensuite rappeler le collier sans avoir à retenir son identifiant automatique.*
 
-Une fois les caractéristiques intrinsecques du collier saisie, la validation se fait en pressant el bouton "submit"
+![image](https://user-images.githubusercontent.com/39738426/130601782-4ce1e93f-eae4-418a-b2f4-7318105d853a.png)
+*Si l'on veut modifier la fréquence VHF d'un collier, entrer son identifiant usuel, la nouvelle fréquences, sa marque et son modèle*
+
+Une fois les caractéristiques intrinsecques du collier saisies, la validation se fait en pressant le bouton "Soumettre"
 
 ![image](https://user-images.githubusercontent.com/39738426/130601782-4ce1e93f-eae4-418a-b2f4-7318105d853a.png)
 *exemple de la saisie d'un collier fictif montrant les différents modèles de colliers GPS disponibles pour la marque Vectronic Aerospace.*
