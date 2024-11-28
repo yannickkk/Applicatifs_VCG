@@ -40,7 +40,7 @@ C'est le cas de :
 *Les choix sont imbriqués, ainsi le choix d'un type de collier, contraint les marques disponibles et les marques contraignent les modèles disponibles.* 
 
 ![image](https://user-images.githubusercontent.com/39738426/125033795-0fcdf380-e090-11eb-93de-3538ba08a5b4.png)
-*Seule la fréquence de l'émetteur VHF n'est pas un champ obligatoire. cependant son alimentation est fortement recommendée de façon à pouvoir ensuite rappeler le collier sans avoir à retenir son identifiant automatique.*
+*Seule la fréquence de l'émetteur VHF n'est pas un champ obligatoire. cependant son alimentation est fortement recommandée de façon à pouvoir ensuite rappeler le collier sans avoir à retenir son identifiant automatique.*
 
 Une fois les caractéristiques intrinsecques du collier saisie, la validation se fait en pressant el bouton "submit"
 
