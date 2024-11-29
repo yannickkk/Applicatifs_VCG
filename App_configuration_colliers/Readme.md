@@ -43,7 +43,7 @@ C'est le cas de :
 *Seule la fréquence de l'émetteur VHF n'est pas un champ obligatoire. cependant son alimentation est fortement recommandée de façon à pouvoir ensuite rappeler le collier sans avoir à retenir son identifiant automatique.*
 
 ![image](https://user-images.githubusercontent.com/39738426/130601782-4ce1e93f-eae4-418a-b2f4-7318105d853a.png)
-*Si l'on veut modifier la fréquence VHF d'un collier, entrer son identifiant usuel, la nouvelle fréquences, sa marque et son modèle*
+*Si l'on veut modifier la fréquence VHF d'un collier, entrer son identifiant usuel, la nouvelle fréquences, son type, sa marque et son modèle. De la même manière on peut modifier le type (GSM dégradé en GPS par exemple suite à un problème matériel), et éventuellement la marque et le modèle en cas d'erreur de saisie.
 
 Une fois les caractéristiques intrinsecques du collier saisies, la validation se fait en pressant le bouton "Soumettre"
 
