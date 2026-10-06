@@ -1,6 +1,19 @@
 
 BEGIN;
 
+-- ============================================================
+-- 1. On remet à NULL les emprises existantes
+-- ============================================================
+
+UPDATE correction_betail.t_correction
+SET bet_metadata_geom = NULL
+WHERE bet_annee IN ('2010', '2011', '2012', '2013', '2021');
+
+
+-- ============================================================
+-- 2. Attribution des emprises
+-- ============================================================
+
 -- 2010
 UPDATE correction_betail.t_correction AS c
 SET
@@ -9,6 +22,7 @@ SET
 FROM correction_betail.zone_releve_bet_2010 AS z
 WHERE c.bet_annee = '2010'
   AND ST_Intersects(c.bet_geom, z.geom);
+
 
 -- 2011
 UPDATE correction_betail.t_correction AS c
@@ -19,6 +33,7 @@ FROM correction_betail.zone_releves_bet_2011 AS z
 WHERE c.bet_annee = '2011'
   AND ST_Intersects(c.bet_geom, z.geom);
 
+
 -- 2012
 UPDATE correction_betail.t_correction AS c
 SET
@@ -27,6 +42,7 @@ SET
 FROM correction_betail.zone_releves_bet_2012 AS z
 WHERE c.bet_annee = '2012'
   AND ST_Intersects(c.bet_geom, z.geom);
+
 
 -- 2013
 UPDATE correction_betail.t_correction AS c
@@ -37,6 +53,7 @@ FROM correction_betail.zone_releves_bet_2013 AS z
 WHERE c.bet_annee = '2013'
   AND ST_Intersects(c.bet_geom, z.geom);
 
+
 -- 2021
 UPDATE correction_betail.t_correction AS c
 SET
@@ -45,5 +62,19 @@ SET
 FROM correction_betail.zone_releves_bet_2021 AS z
 WHERE c.bet_annee = '2021'
   AND ST_Intersects(c.bet_geom, z.geom);
+
+
+-- ============================================================
+-- 3. Suppression des corrections sans emprise
+-- ============================================================
+
+DELETE FROM correction_betail.t_correction
+WHERE bet_annee IN ('2010', '2011', '2012', '2013', '2021')
+  AND bet_metadata_geom IS NULL;
+
+
+-- ============================================================
+-- 4. Validation
+-- ============================================================
 
 COMMIT;
